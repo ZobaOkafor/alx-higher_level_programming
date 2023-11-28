@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-for alpha in range(ord('z'), ord('A') - 1, -1):
+for alpha in range(ord('z'), ord('a') - 1, -1):
     if alpha % 2 == 0:
         print("{}".format(chr(alpha)), end="")
     else:
