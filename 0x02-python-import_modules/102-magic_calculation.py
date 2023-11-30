@@ -3,8 +3,6 @@
 """Magic calculation that replicates the workings of provided bytecode"""
 
 
-import magic_calculation_102
-
 def magic_calculation(a, b):
     from magic_calculation_101 import add sub
 
