@@ -14,4 +14,4 @@ def magic_calculation(a, b):
         return (C)
 
     else:
-        return __import__('magic_calculation_102').sub(a, b)
+        return (__import__('magic_calculation_102').sub(a, b))
