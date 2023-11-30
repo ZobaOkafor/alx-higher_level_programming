@@ -8,7 +8,7 @@ if __name__ == "__main__":
 
     hidden_names = hidden_4
     noms = dir(hidden_names)
-    
+
     for nom in noms:
         if nom[:2] != "__":
             print(nom)
