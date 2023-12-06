@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <Python.h>
 
 
 /**
@@ -43,16 +44,16 @@ void print_python_bytes(PyObject *p)
 
 	if (!PyBytes_Check(p))
 	{
-		printf(" [ERROR] Invalid Bytes Object\n");
+		printf("  [ERROR] Invalid Bytes Object\n");
 		return;
 	}
 
 	size = PyBytes_GET_SIZE(p);
 	str = (unsigned char *)PyBytes_AS_STRING(p);
 
-	printf(" size: %zd\n", size);
-	printf(" trying string: %s\n", str);
-	printf(" first 10 bytes:");
+	printf("  size: %zd\n", size);
+	printf("  trying string: %s\n", str);
+	printf("  first 10 bytes:");
 
 	for (i - 0; i < size && i < 10; i++)
 		printf(" %02x", str[i]);
