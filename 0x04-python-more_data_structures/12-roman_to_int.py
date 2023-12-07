@@ -8,14 +8,37 @@ def roman_to_int(roman_string):
         return (0)
 
     roman_n = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
-    total = 0
+    result = 0
+    prev_value = 0
 
-    for i in range(len(roman_str)):
-        current_value = roman_n[roman_str[i]]
+    for char in reversed(roman_string):
+        value = roman_n[char]
 
-        if i < len(roman_string) - 1 and roman_n[roman_str[i + 1]] > current_value:
-            total -= current_value
+        if value < prev_value:
+            result -= value
         else:
-            total += current_value
+            result += value
 
-    return (total)
+        prev_value = value
+
+    return (result)
+
+
+
+roman_to_int = __import__('12-roman_to_int').roman_to_int
+
+roman_number = "X"
+print("{} = {}".format(roman_number, roman_to_int(roman_number)))
+
+roman_number = "VII"
+print("{} = {}".format(roman_number, roman_to_int(roman_number)))
+
+roman_number = "IX"
+print("{} = {}".format(roman_number, roman_to_int(roman_number)))
+
+roman_number = "LXXXVII"
+print("{} = {}".format(roman_number, roman_to_int(roman_number)))
+
+roman_number = "DCCVII"
+print("{} = {}".format(roman_number, roman_to_int(roman_number)))
+
