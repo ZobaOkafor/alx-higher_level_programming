@@ -101,18 +101,18 @@ class SinglyLinkedList:
         Args:
             value (int): The value to be inserted.
         """
-        #'cur' means current
         new_node = Node(value)
 
         if self.head is None or value < self.head.data:
             new_node.next_node = self.head
             self.head = new_node
         else:
-            cur_node = self.head
-            while cur_node.next_node is not None and cur_node.next_node.data < value:
-                cur_node = cur_node.next_node
-            new_node.next_node = cur_node.next_node
-            cur_node.next_node = new_node
+            current_node = self.head
+            while (current_node.next_node is not None and
+                    current_node.next_node.data < value):
+                current_node = current_node.next_node
+            new_node.next_node = current_node.next_node
+            current_node.next_node = new_node
 
     def __str__(self):
         """
@@ -122,8 +122,8 @@ class SinglyLinkedList:
             str: The string representation of the linked list.
         """
         result = []
-        cur_node = self.head
-        while cur_node is not None:
-            result.append(str(cur_node.data))
-            cur_node = cur_node.next_node
+        current_node = self.head
+        while current_node is not None:
+            result.append(str(current_node.data))
+            current_node = current_node.next_node
         return ('\n'.join(result))
