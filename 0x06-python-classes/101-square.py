@@ -111,20 +111,6 @@ class Square:
         Returns:
             str: The string representation of the square.
         """
-        """
-        result = []
-        for i in range(self.__position[1]):
-            result.append("")
-        for i in range(self.__size):
-            result.append(" " * self.__position[0] + "#" * self.__size)
-        return ('\n'.join(result))
-        """
-        if self.__size == 0:
-            return ("")
-
-        lines = [
-            " " * self.__position[0] + "#" * self.__size
-            for _ in range(self.__position[1], self.__size)
-        ]
-
-        return ("\n".join(lines))
+        return ('\n'.join(["" for _ in range(self.__position[1])] +
+                [" " * self.__position[0] + "#" * self.__size
+                for _ in range(self.__size)]))
