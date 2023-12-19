@@ -119,22 +119,12 @@ class Square:
             result.append(" " * self.__position[0] + "#" * self.__size)
         return ('\n'.join(result))
         """
-        """
-        if self.__size != 0:
-            [print("") for i in range(0, self.__position[1])]
-        for i in range(0, self.__size):
-            [print(" ", end="") for j in range(0, self.__position[0])]
-            [print("#", end="") for k in range(0, self.__size)]
-            if i != self.__size - 1:
-                print("")
-        return ("")
-        """
         if self.__size == 0:
             return ("")
 
-    lines = [
-        " " * self.__position[0] + "#" * self.__size
-        for _ in range(self.__position[1], self.__size)
-    ]
+        lines = [
+            " " * self.__position[0] + "#" * self.__size
+            for _ in range(self.__position[1], self.__size)
+        ]
 
-    return ("\n".join(lines))
+        return ("\n".join(lines))
