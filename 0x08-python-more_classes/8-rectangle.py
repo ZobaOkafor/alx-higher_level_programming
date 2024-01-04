@@ -145,7 +145,8 @@ class Rectangle:
             TypeError: If rect_1 or rect_2 is not an instance of Rectangle.
 
         Returns:
-            Rectangle: The bigger rectangle or rect_1 if both have the same area.
+            Rectangle: The bigger rectangle or rect_1
+                    if both have the same area.
         """
         if not isinstance(rect_1, Rectangle):
             raise TypeError("rect_1 must be an instance of Rectangle")
@@ -157,16 +158,19 @@ class Rectangle:
         else:
             return (rect_2)
 
+
 if __name__ == "__main__":
     my_rectangle_1 = Rectangle(8, 4)
     my_rectangle_2 = Rectangle(2, 3)
 
-    if my_rectangle_1 is Rectangle.bigger_or_equal(my_rectangle_1, my_rectangle_2):
+    if (my_rectangle_1 is Rectangle.bigger_or_equal(my_rectangle_1,
+                                                    my_rectangle_2)):
         print("my_rectangle_1 is bigger or equal to my_rectangle_2")
     else:
         print("my_rectangle_2 is bigger than my_rectangle_1")
 
     my_rectangle_2.width = 10
     my_rectangle_2.height = 5
-    if my_rectangle_1 is Rectangle.bigger_or_equal(my_rectangle_1, my_rectangle_2):
+    if (my_rectangle_1 is Rectangle.bigger_or_equal(my_rectangle_1,
+                                                    my_rectangle_2)):
         print("my_rectangle_1 is bigger or equal to my_rectangle_2")
