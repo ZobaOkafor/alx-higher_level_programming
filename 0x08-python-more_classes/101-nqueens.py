@@ -17,6 +17,7 @@ Attributes:
 
 import sys
 
+
 def is_safe(board, row, col, N):
     """
     Check if placing a queen at board[row][col] is safe.
@@ -38,12 +39,18 @@ def is_safe(board, row, col, N):
 
     return (True)
 
+
 def solve_nqueens_util(board, row, N, solutions):
     """
     Util function to solve N-Queens problem using backtracking.
     """
     if row == N:
-        solutions.append([[i, j] for i, row in enumerate(board) for j, col in enumerate(row) if col == 1])
+        solutions.append(
+                [
+                    [i, j] for i, row in enumerate(board)
+                    for j, col in enumerate(row) if col == 1
+                ]
+        )
         return
 
     for col in range(N):
@@ -51,6 +58,7 @@ def solve_nqueens_util(board, row, N, solutions):
             board[row][col] = 1
             solve_nqueens_util(board, row + 1, N, solutions)
             board[row][col] = 0  # Backtrack
+
 
 def solve_nqueens(N):
     """
@@ -63,6 +71,7 @@ def solve_nqueens(N):
 
     for solution in solutions:
         print(solution)
+
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
