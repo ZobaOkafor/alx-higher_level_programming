@@ -106,13 +106,10 @@ class Rectangle:
         """
         if self.__width == 0 or self.__height == 0:
             return ("")
-        return ("\n".join(['#' * self.__width for i in range(self.__height)]))
 
-    def __repr__(self):
-        """
-        Returns a string representation of the rectangle for debugging.
-
-        Returns:
-            str: String representation of the rectangle.
-        """
-        return ("Rectangle({}, {})".format(self.__width, self.__height))
+        rect = []
+        for i in range(self.__height):
+            [rect.append('#') for j in range(self.__width)]
+            if i != self.__height - 1:
+                rect.append("\n")
+        return ("".join(rect))
