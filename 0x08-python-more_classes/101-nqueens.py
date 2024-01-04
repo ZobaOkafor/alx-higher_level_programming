@@ -64,7 +64,7 @@ def solve_nqueens(N):
     """
     Solve N-Queens problem and print the solutions.
     """
-    board = [[0 for _ in range(N)] for _ in range(N)]
+    board = [[0 for i in range(N)] for i in range(N)]
     solutions = []
 
     solve_nqueens_util(board, 0, N, solutions)
