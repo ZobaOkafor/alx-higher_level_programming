@@ -1,0 +1,63 @@
+The "3-say_my_name" module
+==========================
+
+This module defines a name printing function "say_my_name(first_name, last_name)
+
+
+Example Usage
+=============
+
+Importing the module
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+
+==== Test cases ====
+
+# Passing first_name and last_name as arguments
+
+>>> say_my_name("Zoba", "Kafor")
+My name is Zoba Kafor
+>>> say_my_name("John")
+My name is John
+>>> say_my_name("John", "Smith")
+My name is John Smith
+>>> say_my_name("Bob")
+My name is Bob
+
+
+# Passing numbers as arguments
+
+>>> say_my_name(str(44), "Vincent")
+My name is 44 Vincent
+
+>>> say_my_name(144)
+Traceback (most recent call last):
+	...
+TypeError: first_name must be a string
+
+>>> say_my_name("Kimba", 0)
+Traceback (most recent call last):
+	...
+TypeError: last_name must be a string
+
+
+# Missing two arguments
+
+>>> say_my_name()
+Traceback (most recent call last):
+	...
+TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+
+# Passing None as argument
+
+>>> say_my_name(None)
+Traceback (most recent call last):
+	...
+TypeError: first_name must be a string
+
+
+>>> say_my_name("John", None)
+Traceback (most recent call last):
+	...
+TypeError: last_name must be a string

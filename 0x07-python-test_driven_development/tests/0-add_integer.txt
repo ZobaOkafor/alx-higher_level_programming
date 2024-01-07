@@ -14,7 +14,7 @@ Importing the module
 === Test Cases ===
 
 Adding 1 and 2
->>> add_integer(1,2)
+>>> add_integer(1, 2)
 3
 
 Adding -5 and 10
@@ -28,8 +28,8 @@ Adding 100 and -2
 
 ------------------------------
 This function also works with floating point values.
-Floats are casted to ints befoe addition is perfomed.
-Also, floatind and non-floating point values can be combined.
+Floats are casted to ints before addition is perfomed.
+Also, floating and non-floating point values can be combined.
 
 
 Adding 3.14 and 2.5
@@ -37,7 +37,7 @@ Adding 3.14 and 2.5
 5
 
 Adding -10.6 and 5.8
->>> add_integer(-10.6, 5.8))
+>>> add_integer(-10.6, 5.8)
 -4
 
 Ading 2.3 and -3
