@@ -78,7 +78,7 @@ Hello.
 <BLANKLINE>
 
 
-# Passing Node as a text
+# Passing None as a text
 
 >>> text_indentation(None)
 Traceback (most recent call last):
