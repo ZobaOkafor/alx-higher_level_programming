@@ -49,10 +49,10 @@ def main():
                 status_codes[status_code] += 1
 
             if line_count % 10 == 0:
-                print_statistics(total_size, status_codes)
+                print_stats(total_size, status_codes)
 
     except KeyboardInterrupt:
-        print_statistics(total_size, status_codes)
+        print_stats(total_size, status_codes)
         sys.exit(0)
 
 
