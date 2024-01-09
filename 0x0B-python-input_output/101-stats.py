@@ -30,7 +30,10 @@ def parse_line(line):
     - tuple: Tuple containing status code and file size.
     """
     parts = line.split()
-    return (int(parts[-2]), int(parts[-1]))
+    if len(parts) >= 2:
+        return (int(parts[-2]), int(parts[-1]))
+    else:
+        return (None, 0)
 
 
 def main():
