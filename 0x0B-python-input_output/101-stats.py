@@ -6,11 +6,11 @@
 import sys
 
 
-def print_stats(total_size, status_codes):
+def print_statistics(total_size, status_codes):
     """
     Prints the computed statistics.
 
-    Args:
+    Parameters:
     - total_size (int): Total file size.
     - status_codes (dict): Dictionary containing the count of each status code.
     """
@@ -23,20 +23,17 @@ def parse_line(line):
     """
     Parses a line and extracts information.
 
-    Args:
+    Parameters:
     - line (str): Input line to be parsed.
 
     Returns:
     - tuple: Tuple containing status code and file size.
     """
     parts = line.split()
-    if len(parts) >= 2:
-        return (int(parts[-2]), int(parts[-1]))
-    else:
-        return (None, 0)
+    return int(parts[-2]), int(parts[-1])
 
 
-def main():
+def stats_generator():
     total_size = 0
     status_codes = {200: 0, 301: 0, 400: 0, 401: 0, 403: 0,
                     404: 0, 405: 0, 500: 0}
@@ -52,12 +49,12 @@ def main():
                 status_codes[status_code] += 1
 
             if line_count % 10 == 0:
-                print_stats(total_size, status_codes)
+                yield total_size, status_codes
 
     except KeyboardInterrupt:
-        print_stats(total_size, status_codes)
-        sys.exit(0)
+        yield total_size, status_codes
 
 
 if __name__ == "__main__":
-    main()
+    for total_size, status_codes in stats_generator():
+        print_statistics(total_size, status_codes)
