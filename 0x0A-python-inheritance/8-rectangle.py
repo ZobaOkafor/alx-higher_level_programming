@@ -2,7 +2,7 @@
 """Defines a class Rectangle that inherits from BaseGeometry."""
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
-
+"""
 class BaseGeometry:
     """Empty class definition for BaseGeometry."""
 
@@ -26,7 +26,7 @@ class BaseGeometry:
             raise TypeError("{} must be an integer".format(name))
         if value <= 0:
             raise ValueError("{} must be greater than 0".format(name))
-
+"""
 
 class Rectangle(BaseGeometry):
     """Class definition for Rectangle, inheriting from BaseGeometry."""
