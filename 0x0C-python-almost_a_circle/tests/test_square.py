@@ -28,8 +28,8 @@ class TestSquare(unittest.TestCase):
         """
         with self.assertRaises(TypeError):
             s = Square(-5)
-        with self.assertRaises(ValueError):
-            s = Square(0)
+        with self.assertRaises(ValueError) as context:
+            s = Square(5)
 
     def test_invalid_x(self):
         """
