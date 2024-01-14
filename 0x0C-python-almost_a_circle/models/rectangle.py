@@ -3,7 +3,7 @@
 Rectangle module
 """
 
-from base import Base
+from models.base import Base
 
 
 class Rectangle(Base):
