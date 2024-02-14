@@ -1,8 +1,5 @@
 -- Script to list all genres not linked to the show Dexter in the database hbtn_0d_tvshows.
 
--- Use the database hbtn_0d_tvshows.
-USE hbtn_0d_tvshows;
-
 -- Select genres linked to Dexter.
 SELECT tv_genres.name
 FROM tv_shows
