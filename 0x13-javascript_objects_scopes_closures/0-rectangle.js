@@ -1,6 +1,7 @@
 #!/usr/bin/node
 
 class Rectangle {
+  constructor() {}
 }
 
-module.exports.Rectangle = Rectangle;
+module.exports = Rectangle;
