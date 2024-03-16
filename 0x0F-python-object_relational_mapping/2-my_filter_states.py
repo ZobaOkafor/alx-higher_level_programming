@@ -9,7 +9,8 @@ import sys
 
 def filter_states(username, password, database, state_name):
     """
-    Fetches and prints states from the specified database where name matches the argument.
+    Fetches and prints states from the specified database
+    where name matches the argument.
 
     Args:
         username (str): MySQL username.
@@ -20,7 +21,9 @@ def filter_states(username, password, database, state_name):
     db = MySQLdb.connect(host="localhost", user=username,
                          passwd=password, db=database, port=3306)
     cursor = db.cursor()
-    cursor.execute("""SELECT * FROM states WHERE name = %s ORDER BY states.id ASC""", (state_name,))
+    cursor.execute("""SELECT * FROM states
+                    WHERE name = %s
+                    ORDER BY states.id ASC""", (state_name,))
 
     rows = cursor.fetchall()
     for row in rows:
@@ -31,7 +34,9 @@ def filter_states(username, password, database, state_name):
 
 if __name__ == "__main__":
     if len(sys.argv) != 5:
-        print("Usage: {} <username> <password> <database> <state_name>".format(sys.argv[0]))
+        print("Usage: {}\n"
+                "<username> <password>\n"
+                "<database> <state_name>".format(sys.argv[0]))
         sys.exit(1)
 
     username = sys.argv[1]
