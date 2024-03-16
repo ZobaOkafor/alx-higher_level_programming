@@ -18,13 +18,13 @@ def select_states(username, password, database):
     """
     db = MySQLdb.connect(host="localhost", user=username,
                          passwd=password, db=database, port=3306)
-    cur = db.cursor()
-    cur.execute("""SELECT * FROM states WHERE name
+    cursor = db.cursor()
+    cursor.execute("""SELECT * FROM states WHERE name
                 LIKE BINARY 'N%' ORDER BY states.id""")
-    rows = cur.fetchall()
+    rows = cursor.fetchall()
     for row in rows:
         print(row)
-    cur.close()
+    cursor.close()
     db.close()
 
 
