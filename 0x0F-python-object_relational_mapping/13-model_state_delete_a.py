@@ -20,4 +20,4 @@ if __name__ == "__main__":
             (State).filter(State.name.like('%a%'))):
         session.delete(state)
     session.commit()
-    session.close()
+    #session.close()
