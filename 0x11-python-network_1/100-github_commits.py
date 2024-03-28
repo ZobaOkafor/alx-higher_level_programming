@@ -12,8 +12,8 @@ if __name__ == "__main__":
     repository = sys.argv[1]
     owner = sys.argv[2]
 
-    url = "https://api.github.com/repos/{}/{}/commits"
-    .format(owner, repository)
+    url = "https://api.github.com/repos/{}/{}/commits".format(
+            owner, repository)
     response = requests.get(url)
     commits = response.json()
 
