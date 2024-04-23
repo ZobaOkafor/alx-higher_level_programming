@@ -17,9 +17,12 @@ request(apiUrl, (error, response, body) => {
   }
 
   const filmsData = JSON.parse(body).results;
-  const moviesWithWedgeAntilles = filmsData.filter(film =>
-    film.characters.includes(`https://swapi-api.alx-tools.com/api/people/${characterId}/`)
-  );
+  const count = filmsData.reduce((acc, film) => {
+    if (film.characters.includes(`https://swapi-api.alx-tools.com/api/people/${characterId}/`)) {
+      return acc + 1;
+    }
+    return acc;
+  }, 0);
 
-  console.log(moviesWithWedgeAntilles.length);
+  console.log(count);
 });
